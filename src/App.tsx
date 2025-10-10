@@ -1,11 +1,11 @@
-import Example from './components/Example';
+import AppRoutes from '@/routes';
+import { AppProvider } from '@/providers/AppProvider';
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline"> Hello world!</h1>
-      <Example />
-    </>
+    <AppProvider>
+      <AppRoutes />
+    </AppProvider>
   );
 }
 
