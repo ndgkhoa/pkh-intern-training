@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-export default function NotFoundPage() {
+const NotFound = () => {
   return (
     <div className="flex min-h-[80vh] flex-col items-center justify-center text-center">
       <motion.h1
@@ -38,4 +38,6 @@ export default function NotFoundPage() {
       </motion.div>
     </div>
   );
-}
+};
+
+export default NotFound;

@@ -7,9 +7,10 @@ import Loading from '@/components/Loading';
 // Lazy load pages
 const HomePage = lazy(() => import('@/features/home/pages/HomePage'));
 const LoginPage = lazy(() => import('@/features/auth/pages/LoginPage'));
+const ProductsPage = lazy(() => import('@/features/products/pages/ProductsPage'));
 // const RegisterPage = lazy(() => import('@/features/auth/pages/RegisterPage'));
 // const DashboardPage = lazy(() => import('@/features/admin/pages/DashboardPage'));
-const NotFoundPage = lazy(() => import('@/features/common/pages/NotFoundPage'));
+const NotFoundPage = lazy(() => import('@/components/NotFound'));
 
 export default function AppRoutes() {
   return (
@@ -21,6 +22,7 @@ export default function AppRoutes() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             {/* <Route path="/register" element={<RegisterPage />} /> */}
+            <Route path="/products" element={<ProductsPage />} />
           </Route>
 
           {/* Protected routes 

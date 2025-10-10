@@ -1,24 +1,15 @@
-import type { ReactNode } from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-// import { SearchContextProvider } from "@/contexts/SearchContext";
-// import { AuthProvider } from "@/contexts/AuthContext";
+import type { PropsWithChildren } from 'react';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Toaster } from 'react-hot-toast';
+import { queryClient } from '@/config/tanstack';
 
-const queryClient = new QueryClient();
-
-interface AppProviderProps {
-  children: ReactNode;
-}
-
-export function AppProvider({ children }: AppProviderProps) {
+export function AppProvider({ children }: PropsWithChildren) {
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <AuthProvider>
-        <SearchContextProvider> */}
       {children}
       <Toaster position="top-right" />
-      {/* </SearchContextProvider>
-      </AuthProvider> */}
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
